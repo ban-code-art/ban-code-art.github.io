@@ -1,0 +1,5 @@
+title: Ban-code-art Blog
+description: 代码与思考的记录
+theme: minima
+plugins:
+  - jekyll-feed
