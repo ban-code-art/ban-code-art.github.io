@@ -71,15 +71,20 @@ body {
   background: url('https://img.001315.xyz/file/tg/1778924977571.webp') center center / cover no-repeat fixed !important;
 }
 
-/* Make content areas transparent so background shows through */
-#page,
-#content-inner,
-.layout {
-  background: transparent !important;
+/* Force background image on Butterfly's #web_bg layer */
+#web_bg {
+  background: url('https://img.001315.xyz/file/tg/1778924977571.webp') center center / cover no-repeat fixed !important;
 }
 
-#web_bg {
+/* Make content wrappers transparent so background shows through */
+#page,
+#content-inner,
+.layout,
+.page,
+main#content-inner,
+#body-wrap {
   background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Category card tiles */
@@ -110,12 +115,6 @@ body {
   border-radius: 50%;
   border: 3px solid rgba(76, 155, 255, 0.4);
   box-shadow: 0 4px 16px rgba(76, 155, 255, 0.2);
-  transition: all 0.5s ease;
-}
-
-.card-info .avatar-img:hover {
-  transform: rotate(360deg);
-  border-color: rgba(76, 155, 255, 0.8);
 }
 
 /* Subtitle typewriter cursor */
@@ -144,6 +143,10 @@ body {
 #footer {
   background: rgba(255, 255, 255, 0.6) !important;
   backdrop-filter: saturate(180%) blur(20px);
+}
+
+#footer::before {
+  background: transparent !important;
 }
 
 [data-theme="dark"] #footer {
