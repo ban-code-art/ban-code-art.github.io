@@ -1,4 +1,4 @@
-# Navigation
+# Navigation - transparent style
 nav:
   logo:
   display_title: true
@@ -24,13 +24,25 @@ highlight_shrink: false
 social:
   fab fa-github: https://github.com/ban-code-art || Github
 
-# Avatar
+# Avatar - anime style
 avatar:
-  img: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  effect: false
+  img: https://cdn.jsdelivr.net/gh/cyborg2077/img/avatar.webp
+  effect: true
 
-# Home page banner
-index_img: false
+# Home page banner - full screen anime background
+index_img: https://cdn.jsdelivr.net/gh/cyborg2077/img/wallhaven-l8vp7y.jpg
+index_site_info_top: 60
+
+# Subtitle typewriter effect
+subtitle:
+  enable: true
+  effect: true
+  loop: true
+  source: false
+  sub:
+    - 学习与记录
+    - 代码改变世界
+    - 保持热爱，奔赴山海
 
 # Default cover for posts
 default_cover:
@@ -88,7 +100,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 代码与思考的记录
+    description: 保持热爱，奔赴山海
     button:
       enable: true
       icon: fab fa-github
@@ -96,7 +108,7 @@ aside:
       link: https://github.com/ban-code-art
   card_announcement:
     enable: true
-    content: 欢迎来到 Rhine 的学习博客
+    content: 欢迎来到 Rhine 的博客，这里记录着代码与生活的点滴
   card_recent_post:
     enable: true
     limit: 5
@@ -170,15 +182,15 @@ theme_color:
   meta_theme_color_light: "#ffffff"
   meta_theme_color_dark: "#1a1b2e"
 
-# Background
-background: "#f7f9fe"
+# Background - transparent to show body gradient
+background: transparent
 
 # Footer background
 footer_bg: true
 
-# Preloader
+# Preloader - loading animation
 preloader:
-  enable: false
+  enable: true
   source: 1
   pace_css_url:
 
@@ -212,7 +224,9 @@ pjax:
 # Inject custom head/bottom
 inject:
   head:
+    - <link rel="stylesheet" href="/css/custom.css">
   bottom:
+    - <script src="/js/custom.js"></script>
 
 # CDN settings
 CDN:
