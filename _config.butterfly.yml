@@ -230,5 +230,5 @@ inject:
 
 # CDN settings
 CDN:
-  third_party_provider: cdnjs
+  third_party_provider: jsdelivr
   option:
