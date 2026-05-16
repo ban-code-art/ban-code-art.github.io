@@ -27,7 +27,7 @@ social:
 # Avatar - anime style
 avatar:
   img: https://img.001315.xyz/file/tg/1778406722917.webp
-  effect: true
+  effect: false
 
 # Home page banner - full screen anime background
 index_img: https://img.001315.xyz/file/tg/1778924977571.webp
