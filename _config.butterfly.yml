@@ -31,7 +31,7 @@ avatar:
 
 # Home page banner - full screen anime background
 index_img: https://cdn.jsdelivr.net/gh/cyborg2077/img/wallhaven-l8vp7y.jpg
-index_site_info_top: 60
+index_site_info_top: 60%
 
 # Subtitle typewriter effect
 subtitle:
