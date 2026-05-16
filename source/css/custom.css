@@ -62,14 +62,24 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Page background - subtle gradient */
+/* Page background - fixed full-screen image */
 body {
-  background: linear-gradient(135deg, #e8f4fd 0%, #f0f4ff 50%, #e8ecf8 100%) !important;
-  background-attachment: fixed !important;
+  background: url('https://img.001315.xyz/file/tg/1778924977571.webp') center center / cover no-repeat fixed !important;
 }
 
 [data-theme="dark"] body {
-  background: linear-gradient(135deg, #0f1123 0%, #1a1b2e 50%, #151628 100%) !important;
+  background: url('https://img.001315.xyz/file/tg/1778924977571.webp') center center / cover no-repeat fixed !important;
+}
+
+/* Make content areas transparent so background shows through */
+#page,
+#content-inner,
+.layout {
+  background: transparent !important;
+}
+
+#web_bg {
+  background: transparent !important;
 }
 
 /* Category card tiles */

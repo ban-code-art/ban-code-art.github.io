@@ -26,7 +26,7 @@ social:
 
 # Avatar - anime style
 avatar:
-  img: https://cdn.jsdelivr.net/gh/cyborg2077/img/avatar.webp
+  img: https://img.001315.xyz/file/tg/1778406722917.webp
   effect: true
 
 # Home page banner - full screen anime background
@@ -182,8 +182,8 @@ theme_color:
   meta_theme_color_light: "#ffffff"
   meta_theme_color_dark: "#1a1b2e"
 
-# Background - transparent to show body gradient
-background: transparent
+# Background - fixed full-screen image
+background: "url('https://img.001315.xyz/file/tg/1778924977571.webp') center center / cover no-repeat fixed"
 
 # Footer background
 footer_bg: true
