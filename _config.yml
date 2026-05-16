@@ -94,6 +94,6 @@ live2d:
     hOffset: 0
     vOffset: -20
   mobile:
-    show: false
+    show: true
   react:
     opacity: 0.85
