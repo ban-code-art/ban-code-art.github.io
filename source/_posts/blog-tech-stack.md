@@ -7,7 +7,7 @@ tags:
   - GitHub Pages
   - Butterfly
 categories: 技术
-cover: https://img.001315.xyz/file/tg/1778924977571.webp
+cover: https://img.001315.xyz/file/tg/1778931718760.webp
 ---
 
 ## 前言
