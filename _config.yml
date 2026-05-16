@@ -1,5 +1,77 @@
-title: Ban-code-art Blog
+title: Rhine's Blog
+subtitle: 学习与记录
 description: 代码与思考的记录
-theme: minima
-plugins:
-  - jekyll-feed
+keywords:
+author: Rhine
+language: zh-CN
+timezone: Asia/Shanghai
+
+url: https://ban-code-art.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+
+highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+
+prismjs:
+  enable: false
+
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+default_category: uncategorized
+category_map:
+tag_map:
+
+meta_generator: true
+
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: mtime
+
+per_page: 10
+pagination_dir: page
+
+theme: butterfly
+
+deploy:
+  type: ''
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
