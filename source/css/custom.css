@@ -216,6 +216,41 @@ main#content-inner,
     background-attachment: scroll;
   }
 
+  /* === CORE FIX: Hide ALL sidebar/aside content on mobile === */
+  #aside-content,
+  .aside-content,
+  #card-toc,
+  .card-toc,
+  .card-widget.card-toc,
+  #aside-content .card-widget,
+  .sticky_layout {
+    display: none !important;
+    position: static !important;
+    visibility: hidden !important;
+  }
+
+  /* === CORE FIX: Hide TOC floating elements === */
+  .toc-card,
+  #toc-card,
+  .toc-content,
+  #post > .card-toc,
+  .layout > .aside-content {
+    display: none !important;
+  }
+
+  /* Make sure main content takes full width */
+  #content-inner,
+  #content-inner > .layout {
+    display: block !important;
+  }
+
+  #content-inner > .layout > div:first-child,
+  .layout > .recent-posts,
+  .layout > #post {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   /* Article cards */
   #recent-posts > .recent-post-item {
     border-radius: 8px !important;
@@ -233,39 +268,11 @@ main#content-inner,
     padding: 12px !important;
   }
 
-  /* TOC: hide the sidebar version, keep Butterfly's mobile toggle */
-  #aside-content .card-widget.card-toc {
-    display: none !important;
-  }
-
-  /* Butterfly mobile sidebar - don't break its native behavior */
-  #rightside-config-hide,
-  #rightside-config-show {
-    bottom: 15px;
-    right: 15px;
-  }
-
-  /* Butterfly's mobile TOC drawer - make it readable */
-  .mobile-sidebar-menus-all {
-    max-height: 60vh !important;
-    overflow-y: auto !important;
-  }
-
-  .mobile-sidebar-menus-all .card-toc .toc-content {
-    max-height: 50vh !important;
-    overflow-y: auto !important;
-    padding: 8px 12px;
-  }
-
-  .mobile-sidebar-menus-all .card-toc .toc-content .toc-link {
-    font-size: 14px;
-    padding: 6px 0;
-  }
-
   /* Post content */
   #post {
     padding: 12px !important;
     border-radius: 8px !important;
+    width: 100% !important;
   }
 
   #post .post-content {
@@ -279,6 +286,7 @@ main#content-inner,
   #post .post-content pre {
     border-radius: 6px;
     font-size: 13px;
+    overflow-x: auto;
   }
 
   #post .post-content code {
@@ -291,17 +299,9 @@ main#content-inner,
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Images should not overflow */
   #post .post-content img {
     max-width: 100% !important;
     height: auto !important;
-  }
-
-  /* Sidebar cards */
-  .card-widget {
-    padding: 12px !important;
-    margin: 6px !important;
-    border-radius: 8px !important;
   }
 
   /* Nav */
@@ -324,7 +324,7 @@ main#content-inner,
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   }
 
-  /* Live2D: smaller on mobile so it doesn't block content */
+  /* Live2D: smaller on mobile */
   #live2d-widget {
     width: 100px !important;
     height: 200px !important;
@@ -339,7 +339,7 @@ main#content-inner,
   }
 }
 
-/* Small phone screens (iPhone SE, etc.) */
+/* Small phone screens */
 @media screen and (max-width: 480px) {
   #recent-posts > .recent-post-item {
     margin: 6px 4px;

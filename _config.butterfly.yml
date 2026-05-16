@@ -95,7 +95,7 @@ aside:
   enable: true
   hide: false
   button: true
-  mobile: true
+  mobile: false
   position: right
   display:
     archive: true
