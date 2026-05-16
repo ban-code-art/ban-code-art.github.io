@@ -16,3 +16,4 @@ type: "about"
 ### 联系方式
 
 - GitHub: [ban-code-art](https://github.com/ban-code-art)
+- Email: rhine@hacari.com
