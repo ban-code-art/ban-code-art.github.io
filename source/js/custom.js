@@ -66,6 +66,7 @@ console.log('%c Rhine\'s Blog %c https://ban-code-art.github.io',
 document.addEventListener('pjax:complete', function() {
   var scripts = document.querySelectorAll('#article-container script');
   scripts.forEach(function(script) {
+    if (script.id === 'hbeData' || (script.type && script.type !== 'text/javascript')) return;
     var newScript = document.createElement('script');
     if (script.src) {
       newScript.src = script.src;
