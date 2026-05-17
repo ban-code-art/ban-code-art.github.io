@@ -328,7 +328,7 @@ main#content-inner,
   #live2d-widget {
     width: 100px !important;
     height: 200px !important;
-    right: 0 !important;
+    left: 0 !important;
     bottom: -10px !important;
   }
 
