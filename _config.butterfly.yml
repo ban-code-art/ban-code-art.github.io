@@ -235,6 +235,12 @@ inject:
     - <script src="/js/custom.js"></script>
     - <script color="76,155,255" opacity="0.6" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@2.0.4/dist/canvas-nest.umd.js"></script>
 
+# 不蒜子访问量统计
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
 # CDN settings
 CDN:
   third_party_provider: jsdelivr

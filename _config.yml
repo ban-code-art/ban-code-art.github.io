@@ -174,3 +174,25 @@ butterfly_charts:
   enable: true
   bindTo: '#bindTo'
   bindType: 'bindTo'
+
+# WowJS 滚动动画
+wow:
+  enable: true
+  mobile: false
+  animateCSS: https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css
+  wowJS: https://cdn.jsdelivr.net/npm/wow.js@1/dist/wow.min.js
+
+# 豆瓣书影音
+douban:
+  id:
+  builtin: true
+  book:
+    title: '书单'
+    quote: '读万卷书，行万里路'
+  movie:
+    title: '影单'
+    quote: '光影记录生活'
+  game:
+    title: '游戏'
+    quote: '人生如戏，全靠演技'
+  timeout: 10000
