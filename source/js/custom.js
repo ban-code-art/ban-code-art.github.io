@@ -11,17 +11,7 @@ console.log('%c Rhine\'s Blog %c https://ban-code-art.github.io',
     var particleCount = 12;
     for (var i = 0; i < particleCount; i++) {
       var particle = document.createElement('div');
-      particle.style.position = 'fixed';
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-      particle.style.width = '6px';
-      particle.style.height = '6px';
-      particle.style.borderRadius = '50%';
-      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-      particle.style.pointerEvents = 'none';
-      particle.style.zIndex = '99999';
-      particle.style.transition = 'all 0.6s ease-out';
-      particle.style.opacity = '1';
+      particle.style.cssText = 'position:fixed;left:' + x + 'px;top:' + y + 'px;width:6px;height:6px;border-radius:50%;pointer-events:none;z-index:99999;opacity:1;background:' + colors[Math.floor(Math.random() * colors.length)];
       document.body.appendChild(particle);
 
       var angle = (Math.PI * 2 / particleCount) * i;
@@ -29,18 +19,15 @@ console.log('%c Rhine\'s Blog %c https://ban-code-art.github.io',
       var tx = Math.cos(angle) * distance;
       var ty = Math.sin(angle) * distance;
 
-      requestAnimationFrame(function(p, tx, ty) {
-        return function() {
-          p.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) scale(0)';
-          p.style.opacity = '0';
-        };
-      }(particle, tx, ty));
-
-      setTimeout(function(p) {
-        return function() {
+      (function(p, tx, ty) {
+        p.offsetWidth;
+        p.style.transition = 'all 0.6s ease-out';
+        p.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) scale(0)';
+        p.style.opacity = '0';
+        setTimeout(function() {
           if (p.parentNode) p.parentNode.removeChild(p);
-        };
-      }(particle), 700);
+        }, 700);
+      })(particle, tx, ty);
     }
   }
 
