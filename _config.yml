@@ -126,3 +126,8 @@ encrypt:
   message: 请输入密码
   wrong_pass_message: 密码错误，请重试
   wrong_hash_message: 密码错误，请重试
+
+# APlayer 音乐播放器
+aplayer:
+  meting: true
+  asset_inject: false
