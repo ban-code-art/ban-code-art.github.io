@@ -43,25 +43,39 @@
 #recent-posts > .recent-post-item,
 .aside-content .card-widget,
 #aside-content .card-widget {
-  background: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: saturate(180%) blur(20px);
-  border-radius: 12px !important;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: saturate(180%) blur(16px);
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.35s ease;
 }
 
 #recent-posts > .recent-post-item:hover {
-  box-shadow: 0 12px 40px rgba(76, 155, 255, 0.15);
-  transform: translateY(-3px);
+  box-shadow:
+    0 16px 48px rgba(76, 155, 255, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.62) !important;
 }
 
 [data-theme="dark"] #recent-posts > .recent-post-item,
 [data-theme="dark"] .aside-content .card-widget,
 [data-theme="dark"] #aside-content .card-widget {
-  background: rgba(40, 45, 75, 0.78) !important;
-  border: 1px solid rgba(130, 160, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: rgba(40, 45, 75, 0.55) !important;
+  border: 1px solid rgba(130, 160, 255, 0.18);
+  border-top: 1px solid rgba(160, 190, 255, 0.25);
+  border-left: 1px solid rgba(140, 170, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(130, 160, 255, 0.1);
 }
 
 /* Page background - fixed full-screen image */
@@ -188,7 +202,7 @@ main#content-inner,
 /* Override Butterfly's CSS variables for dark mode */
 [data-theme="dark"] {
   --global-bg: transparent !important;
-  --card-bg: rgba(40, 45, 75, 0.78) !important;
+  --card-bg: rgba(40, 45, 75, 0.55) !important;
   --font-color: #e0e4ed !important;
   --hr-color: rgba(130, 160, 255, 0.2) !important;
   --sidebar-bg: rgba(40, 45, 75, 0.78) !important;
@@ -333,7 +347,12 @@ main#content-inner,
 }
 
 [data-theme="dark"] #recent-posts > .recent-post-item:hover {
-  box-shadow: 0 12px 40px rgba(76, 130, 255, 0.2);
+  box-shadow:
+    0 16px 48px rgba(76, 130, 255, 0.22),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(130, 160, 255, 0.15);
+  transform: translateY(-4px);
+  background: rgba(40, 45, 75, 0.62) !important;
 }
 
 /* Smooth page transitions */
