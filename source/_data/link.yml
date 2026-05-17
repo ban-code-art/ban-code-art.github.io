@@ -1,0 +1,7 @@
+- class_name: 友情链接
+  class_desc: 一些好朋友的博客
+  link_list:
+    - name: Loogeking
+      link: https://www.loogeking.top/
+      avatar: https://img.001315.xyz/file/tg/1779000483928.webp
+      descr: Loogeking's Blog
