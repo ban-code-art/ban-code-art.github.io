@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>从零搭建个人博客：技术框架与落地实践</title>
+    <url>/posts/7b1e2ad1/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直想拥有一个属于自己的博客，用来记录学习笔记和技术思考。经过一番调研，最终选择了 Hexo + Butterfly + GitHub Pages 的方案。这篇文章记录一下整个博客的技术框架和搭建思路，希望能给想做类似事情的朋友一些参考。</p>
+<h2 id="技术栈总览"><a href="#技术栈总览" class="headerlink" title="技术栈总览"></a>技术栈总览</h2><table>
+<thead>
+<tr>
+<th>层级</th>
+<th>技术选型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>静态站点生成器</td>
+<td>Hexo</td>
+<td>将 Markdown 转换为静态 HTML</td>
+</tr>
+<tr>
+<td>主题框架</td>
+<td>Butterfly</td>
+<td>提供页面布局和视觉风格</td>
+</tr>
+<tr>
+<td>部署平台</td>
+<td>GitHub Pages</td>
+<td>免费托管静态网站</td>
+</tr>
+<tr>
+<td>版本管理</td>
+<td>Git + GitHub</td>
+<td>源码管理与自动部署</td>
+</tr>
+<tr>
+<td>看板娘</td>
+<td>Live2D</td>
+<td>页面右下角的互动角色</td>
+</tr>
+<tr>
+<td>本地搜索</td>
+<td>hexo-generator-search</td>
+<td>站内文章搜索功能</td>
+</tr>
+</tbody></table>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">blog/</span><br><span class="line">├── _config.yml              # Hexo 主配置</span><br><span class="line">├── _config.butterfly.yml    # 主题配置</span><br><span class="line">├── source/</span><br><span class="line">│   ├── _posts/              # 文章目录（Markdown）</span><br><span class="line">│   ├── css/custom.css       # 自定义样式</span><br><span class="line">│   └── js/custom.js         # 自定义脚本</span><br><span class="line">├── themes/                  # 主题目录</span><br><span class="line">└── package.json             # 依赖管理</span><br></pre></td></tr></table></figure>
+
+<p>核心思路很简单：在 <code>source/_posts/</code> 下写 Markdown 文章，Hexo 负责把它们编译成静态网页，推送到 GitHub 后自动部署上线。</p>
+<h2 id="为什么选-Hexo"><a href="#为什么选-Hexo" class="headerlink" title="为什么选 Hexo"></a>为什么选 Hexo</h2><ul>
+<li>基于 Node.js，安装和使用门槛低</li>
+<li>生态成熟，主题和插件丰富</li>
+<li>生成纯静态文件，加载速度快</li>
+<li>文章用 Markdown 书写，专注内容本身</li>
+</ul>
+<h2 id="为什么选-Butterfly-主题"><a href="#为什么选-Butterfly-主题" class="headerlink" title="为什么选 Butterfly 主题"></a>为什么选 Butterfly 主题</h2><ul>
+<li>开箱即用，配置项丰富</li>
+<li>支持暗色模式、目录导航、文章版权声明</li>
+<li>侧边栏可自定义卡片（作者信息、公告、标签云等）</li>
+<li>社区活跃，文档完善</li>
+</ul>
+<h2 id="自定义改造"><a href="#自定义改造" class="headerlink" title="自定义改造"></a>自定义改造</h2><p>在默认主题基础上做了一些个性化调整：</p>
+<ul>
+<li><strong>毛玻璃卡片效果</strong>：文章卡片和侧边栏使用 <code>backdrop-filter</code> 实现半透明磨砂质感</li>
+<li><strong>全屏背景图</strong>：页面背景固定一张图片，内容区域透明，形成层次感</li>
+<li><strong>透明导航栏</strong>：顶部导航默认透明，滚动后变为半透明毛玻璃</li>
+<li><strong>渐入动画</strong>：文章卡片加载时带有淡入上移的动画效果</li>
+<li><strong>自定义配色</strong>：以蓝白色系为主调，统一视觉风格</li>
+</ul>
+<p>这些改造主要通过 <code>source/css/custom.css</code> 实现，不需要修改主题源码。</p>
+<h2 id="部署流程"><a href="#部署流程" class="headerlink" title="部署流程"></a>部署流程</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">写文章（Markdown） → git push → GitHub Pages 自动构建 → 博客更新</span><br></pre></td></tr></table></figure>
+
+<p>整个流程非常轻量，写完文章推送一下就完成发布，不需要服务器、不需要数据库。</p>
+<h2 id="用到的插件"><a href="#用到的插件" class="headerlink" title="用到的插件"></a>用到的插件</h2><ul>
+<li><code>hexo-generator-search</code>：生成站内搜索索引</li>
+<li><code>hexo-wordcount</code>：文章字数统计和阅读时长</li>
+<li><code>hexo-helper-live2d</code>：Live2D 看板娘</li>
+</ul>
+<h2 id="如何复刻"><a href="#如何复刻" class="headerlink" title="如何复刻"></a>如何复刻</h2><p>如果你也想搭建一个类似的博客，核心步骤：</p>
+<ol>
+<li>安装 Node.js 和 Git</li>
+<li><code>npm install -g hexo-cli</code> 安装 Hexo</li>
+<li><code>hexo init blog &amp;&amp; cd blog</code> 初始化项目</li>
+<li>安装 Butterfly 主题并配置</li>
+<li>创建 GitHub Pages 仓库（<code>用户名.github.io</code>）</li>
+<li>写文章，推送，完成</li>
+</ol>
+<p>整个过程不需要后端开发经验，有基本的命令行操作能力就能完成。配合 AI 辅助，从零到上线可以在一天内搞定。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这套方案的优势在于：免费、快速、可定制、易维护。所有内容都是 Markdown 文件，迁移方便；部署在 GitHub 上，稳定可靠。对于想要一个轻量个人博客的开发者来说，是一个不错的选择。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+        <tag>GitHub Pages</tag>
+        <tag>Butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文章标题</title>
+    <url>/posts/3bf4a27/</url>
+    <content><![CDATA[<p>在这里写文章正文，支持标准 Markdown 语法。</p>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>正文段落内容。</p>
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><ul>
+<li>列表项 1</li>
+<li>列表项 2</li>
+<li>列表项 3</li>
+</ul>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>这是一段引用文字。</p>
+</blockquote>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="/%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5" alt="图片描述"></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
+<thead>
+<tr>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td>内容</td>
+<td>内容</td>
+</tr>
+</tbody></table>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://example.com/">链接文字</a></p>
+]]></content>
+      <categories>
+        <category>分类名</category>
+      </categories>
+      <tags>
+        <tag>标签1</tag>
+        <tag>标签2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>私密笔记：学习计划与思考</title>
+    <url>/posts/92931669/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt"
+     data-hbe-format="4"
+     data-wpm="密码错误，请重试"
+     data-whm="密码错误，请重试"
+     data-salt="f957e012b444464e164fb2f0f56d42c7a5c45d5720ae1cd6704e98b505f6382d"
+     data-nonce="fd4a56db78bafb166e81bb50"
+     data-kdf-iterations="250000"
+     data-auto-save="false">
+  <script id="hbeData" type="hbeData">
+    d4581f34d95e97156151b90e0c5a8225c438c205dc72874d3a38c1de20bb35917644a0be387d3db9ad6498f97b62066c76529636728877cb64b074a7c1b389835ad85fd2d80b7c74bd6c789086a4a7cf9f29d7ea2bfd188d9b124bd7b5c276a24b9046a14708e034006eb08ed7e8f5cebf3ac1f27adfe8b7c0e6cef3949a60bbe7ba1204e8f2dd7dfc7a171521fbfdd941f4d72accb3149c4178e9837901dbe9929d7d3996b4b39efeee67a8aa46236fd7c8494b13f92eee509c7c2022e0d5bed1092e9dbfb26a9bac00db7b1ffc68f22f50ba261d49ffdcb48250f2ad9712a154613564f40b14839ef01e902fcfe90f8897c398da1ad0648f73a977d6c2bc9d7dec65feb79598bd95c23c665e4d23d8707e3525bea5656fac6d26a2160be8d553e220fc32928951b3320a053d5f2966a5a5f047742457e7501bc58516012ad7d0c6f985b305813bc88ecc4fbd46c64e77462552d97fc0b8c389c426a9c6b5249003e2fc68678bac87ca422452400e923d7fe97ab34a0609aebc4d16acaba5366b3f10c925e83059ecf2703406ded8ccfeae9a59eb1c7c7e933b2d11eeb67ca59f33f6d1128c88c5607b45b9c30b47652dba28ae7b8bbff1b2fa0dfdb177eb73197046e9a8f9819406edf0004ca08baf931def295563df4d6d6dfdba558ecaf8ca4ab5636c6bcbdb2ece8c627ad52dfcfe65e2610162e63b9375d87f73a08baf1c8cc572edee3b05e70452097b674bd09ec724b3a45762f65adfe3ea95e4755ee56bb0499bd040880a80d1255a6f842ab338485ebe20c2b5fd5d83216331e294432caa34648dbc0b14352d53da77a3d46995e3bb7607b110516857a5f1103c9cbb542f7b214369703e80eabef0f07a37c4e66d5532a9ced2878027208caaa779bbcd0c883d950467768e69181658835b90c6a2f31c3c7157bef222b9b51a9aba6d27cd4f95958cb5df6667bd928c452d5278386a617c2adb65d1cc2ae926fce207f7252d38910936cbe64a7303cc6a80f2e6c5cd3870bfe26a16f1597612e6575ac5fbbbcb055c80d0fefb240c6abaac26b98e68b7e0ab7f58afd88dc42a8f0160f5bc2b3e309f27a0cca7f91189c8bdc61bbc91d7e8686dfe025521efcd63ed25fcbc4bfbc19373ced8526cfaa5f61ad17109ea1214d091efe454c222b156b73541a328d39dfceaba76f032f7bb9f0c8ee84d391bde211e2137cfa532db86e830f84cd6d7d7914a7ba8ed4a8048a392477123c5c4f8e19b8e421711c3e22ff4854636eaaa9f911f774053c900814ce0e1e52ae3344be427f8e7460f77e98e9dcf1c2439b6765767a56e10d431c9a3799d119851437d53375b15519839ecc41b7ffa377b90bc4223c145a937c9ad578521eb0efadd03798bb0747e30ae993e19fcf4c9952ea7165f5f6e561b73ff4fda8cc48bf5f6dba2983b5e87df9c586e1cb0d863db352a62becb24d95a6817533b99a6ad549c456dfecdf34e5dc8a05a41e28dbe8bfa4295de38c0a06a7338cd29695e579fc958e4e88ed2c7ba67df30094d9230cf51a3f44422e3d86a57d3f70016981353f58ab25f56f930b9c988718a165700d162d9c22235a97f0fb7c8c751df40f478213a2f5842a43b00eeed08e6c5b0eff95d5ed504845d71a26905e3b6e1f5b10c56e235ace37c5a5a1e516fc5b1ea77f5926aca38739241a51e2705ff96d5d8d7e000924959627c32b4d80cc0a5a274ccb6515f457564594cfee985e300d23805fca962cab46d1f737e30fb36d2c2c834de9c695e13d30af2893cc7ad5183fb1677ed040cf8ed6bd88bdd1254486fec3ef7df7af1441ddd2aa65a95850215177ad872bb35551004288c2f1d04ab9a98deaed7510223db0c07577508f235b8c2efab24744d44121eddc8275d77c65c7383bded1f8bee1d1afc7fe5ae1515dc7a24f6b71301bc7026976e6bc5c109a9716e1828649fee9f6193b8eecd0ce526fa4d6839b0c2e9aacf25e724635a2a09d83171f00735553e5d197dadd044e7538181cccc6cd5ee771cbab307c9dff11638dce31194a535eea6344079341836170639495e046b84125441da08f782bd2a51684682d8c88cb6883910602c68553556c969bc77a15fba5b42be5e2a2ae02f6d5976f3aede5ab896a98dc8d86fe1d07d2a02d1d80fb108e706a72875db1378193200b232602cfffe9e1c00a55dcaf7461d9d8c0fbc9a3f00d772ee8ba0317a42b4c52ce3f9d19f2593990184d49d5ac24c5a14d723d08eda186f9390ef3afb699482ea3c11ba675ba71c9128f6e1408b61e884001493d4f17759bcafb27c7cc97ba4acf1e4a7012778a46662fb108e1c7a1c729f704bbe66e0508fde3800bcd7a9af9b585f00a97adb56a3128db911c442d9c848f3cd87300b089ff20577b96a165ae453f263f6049dd461f3ae3a5533ba308ec9ec7da06609564fa37e441bf61eb5719a6f4abb4626d16a76871605232a7637bf2c2866f23e525b4eabaf980deadb2d293e72408f31e98d9b71cfaf896be33a60570ec55dbebc7f915212eb2a656886b1a9178fbea93cc7d378
+  </script>
+  <div class="hbe hbe-content">
+    <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
+      <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码以阅读全文</span>
+      </label>
+    </div>
+      <button class="hbe hbe-button" type="submit">Decrypt</button>
+      <div class="hbe hbe-error" role="alert" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.9a88ff0505.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>私密</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello, Blog</title>
+    <url>/posts/80e3b612/</url>
+    <content><![CDATA[<p>这是我的第一篇博客文章。</p>
+<p>今后会在这里记录技术笔记、项目心得以及日常思考。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+</search>
