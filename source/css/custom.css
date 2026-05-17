@@ -182,7 +182,7 @@ main#content-inner,
 
 /* Smooth page transitions */
 .recent-post-item,
-.card-widget {
+#aside-content .card-widget {
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
 }
