@@ -22,7 +22,7 @@ highlight_shrink: false
 
 # Social links
 social:
-  fab fa-github: https://github.com/ban-code-art || Github
+  fab fa-github: https://github.com/rhine-code || Github
 
 # Avatar - anime style
 avatar:
@@ -108,7 +108,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: GitHub
-      link: https://github.com/ban-code-art
+      link: https://github.com/rhine-code
   card_announcement:
     enable: true
     content: 欢迎来到 Rhine 的博客，这里记录着代码与生活的点滴
