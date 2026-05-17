@@ -35,7 +35,8 @@
 }
 
 [data-theme="dark"] #nav.fixed {
-  background: rgba(26, 27, 46, 0.8) !important;
+  background: rgba(30, 35, 60, 0.85) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Glassmorphism card effects */
@@ -58,8 +59,9 @@
 [data-theme="dark"] #recent-posts > .recent-post-item,
 [data-theme="dark"] .aside-content .card-widget,
 [data-theme="dark"] #aside-content .card-widget {
-  background: rgba(30, 32, 48, 0.72) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(40, 45, 75, 0.78) !important;
+  border: 1px solid rgba(130, 160, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 /* Page background - fixed full-screen image */
@@ -150,7 +152,8 @@ main#content-inner,
 }
 
 [data-theme="dark"] #footer {
-  background: rgba(26, 27, 46, 0.7) !important;
+  background: rgba(30, 35, 60, 0.8) !important;
+  border-top: 1px solid rgba(130, 160, 255, 0.1);
 }
 
 /* Post card cover image rounded */
@@ -177,7 +180,135 @@ main#content-inner,
 }
 
 [data-theme="dark"] .card-announcement .item-content {
-  color: #aaa;
+  color: #c8cdd8;
+}
+
+/* Dark mode comprehensive improvements */
+[data-theme="dark"] #web_bg {
+  filter: brightness(0.7);
+}
+
+[data-theme="dark"] #content-inner,
+[data-theme="dark"] #page {
+  color: #e0e4ed;
+}
+
+[data-theme="dark"] #post {
+  background: rgba(40, 45, 75, 0.82) !important;
+  border: 1px solid rgba(130, 160, 255, 0.12);
+  border-radius: 12px;
+}
+
+[data-theme="dark"] #post .post-content {
+  color: #dce0ea;
+}
+
+[data-theme="dark"] #post .post-content h1,
+[data-theme="dark"] #post .post-content h2,
+[data-theme="dark"] #post .post-content h3,
+[data-theme="dark"] #post .post-content h4 {
+  color: #f0f2f8;
+}
+
+[data-theme="dark"] #post .post-content a {
+  color: #7cacf8;
+}
+
+[data-theme="dark"] #post .post-content blockquote {
+  background: rgba(76, 130, 255, 0.08);
+  border-left-color: rgba(76, 155, 255, 0.5);
+  color: #b8c4d8;
+}
+
+[data-theme="dark"] #post .post-content code {
+  background: rgba(76, 130, 255, 0.12);
+  color: #c8d4f0;
+}
+
+[data-theme="dark"] #post .post-content pre {
+  background: rgba(20, 24, 45, 0.9) !important;
+}
+
+[data-theme="dark"] #post .post-title {
+  color: #f0f2f8;
+}
+
+[data-theme="dark"] #post .post-meta-date,
+[data-theme="dark"] #post .post-meta {
+  color: #9aa4b8;
+}
+
+[data-theme="dark"] .recent-post-info .article-title {
+  color: #e8ecf4 !important;
+}
+
+[data-theme="dark"] .recent-post-info .content {
+  color: #b0b8c8;
+}
+
+[data-theme="dark"] .recent-post-info .article-meta-wrap {
+  color: #8a94a8;
+}
+
+[data-theme="dark"] #aside-content .card-widget .item-headline,
+[data-theme="dark"] #aside-content .card-widget .author-info__name {
+  color: #e8ecf4;
+}
+
+[data-theme="dark"] #aside-content .card-widget .author-info__description,
+[data-theme="dark"] #aside-content .card-widget .card-info-data {
+  color: #a0a8b8;
+}
+
+[data-theme="dark"] .card-category-list-item .card-category-list-name {
+  color: #c0c8d8 !important;
+}
+
+[data-theme="dark"] .card-category-list-item .card-category-list-count {
+  color: #8a94a8;
+}
+
+[data-theme="dark"] #aside-content .card-categories .card-category-list .card-category-list-item {
+  background: rgba(76, 130, 255, 0.12);
+  border-color: rgba(130, 160, 255, 0.2);
+}
+
+[data-theme="dark"] .card-tag-cloud a {
+  color: #a8b4cc !important;
+}
+
+[data-theme="dark"] #footer .footer_custom_text,
+[data-theme="dark"] #footer #footer-wrap {
+  color: #b0b8c8;
+}
+
+[data-theme="dark"] #footer a {
+  color: #7cacf8;
+}
+
+[data-theme="dark"] #nav a,
+[data-theme="dark"] #nav .site-page {
+  color: #e0e4ed;
+}
+
+[data-theme="dark"] #pagination .page-number {
+  background: rgba(40, 45, 75, 0.7);
+  color: #c0c8d8;
+  border: 1px solid rgba(130, 160, 255, 0.15);
+}
+
+[data-theme="dark"] #pagination .page-number.current {
+  background: rgba(76, 130, 255, 0.3);
+  color: #fff;
+}
+
+[data-theme="dark"] .card-info .avatar-img {
+  border-color: rgba(100, 160, 255, 0.5);
+  box-shadow: 0 4px 16px rgba(76, 130, 255, 0.25);
+}
+
+[data-theme="dark"] #recent-posts > .recent-post-item:hover {
+  box-shadow: 0 12px 40px rgba(76, 130, 255, 0.2);
 }
 
 /* Smooth page transitions */
