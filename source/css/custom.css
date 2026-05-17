@@ -184,8 +184,33 @@ main#content-inner,
 }
 
 /* Dark mode comprehensive improvements */
+
+/* Override Butterfly's CSS variables for dark mode */
+[data-theme="dark"] {
+  --global-bg: transparent !important;
+  --card-bg: rgba(40, 45, 75, 0.78) !important;
+  --font-color: #e0e4ed !important;
+  --hr-color: rgba(130, 160, 255, 0.2) !important;
+  --sidebar-bg: rgba(40, 45, 75, 0.78) !important;
+  --btn-bg: rgba(50, 55, 85, 0.8) !important;
+  --btn-color: #e0e4ed !important;
+  --text-bg-hover: rgba(76, 130, 255, 0.15) !important;
+  --card-border: rgba(130, 160, 255, 0.15) !important;
+  --search-bg: rgba(30, 35, 60, 0.9) !important;
+  --scrollbar-color: rgba(130, 160, 255, 0.3) !important;
+  --tab-bg: rgba(40, 45, 75, 0.6) !important;
+  --tab-border-color: rgba(130, 160, 255, 0.2) !important;
+  --pseudo-hover: rgba(76, 130, 255, 0.2) !important;
+  --input-bg: rgba(30, 35, 60, 0.8) !important;
+}
+
+/* Suppress Butterfly's #web_bg::before dark overlay */
+[data-theme="dark"] #web_bg::before {
+  background-color: rgba(10, 12, 30, 0.45) !important;
+}
+
 [data-theme="dark"] #web_bg {
-  filter: brightness(0.7);
+  filter: none !important;
 }
 
 [data-theme="dark"] #content-inner,
