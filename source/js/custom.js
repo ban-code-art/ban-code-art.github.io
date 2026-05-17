@@ -35,3 +35,61 @@ console.log('%c Rhine\'s Blog %c https://ban-code-art.github.io',
     createFirework(e.clientX, e.clientY);
   });
 })();
+
+// Mouse trail shadow effect
+(function() {
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) return;
+
+  var trail = [];
+  var trailLength = 8;
+  var colors = ['rgba(76,155,255,0.6)', 'rgba(99,102,241,0.5)', 'rgba(167,139,250,0.4)', 'rgba(244,114,182,0.3)', 'rgba(52,211,153,0.25)', 'rgba(76,155,255,0.2)', 'rgba(99,102,241,0.15)', 'rgba(167,139,250,0.1)'];
+
+  for (var i = 0; i < trailLength; i++) {
+    var dot = document.createElement('div');
+    dot.style.cssText = 'position:fixed;pointer-events:none;z-index:99998;border-radius:50%;top:0;left:0;opacity:0;transition:opacity 0.3s;';
+    var size = 12 - i;
+    dot.style.width = size + 'px';
+    dot.style.height = size + 'px';
+    dot.style.background = colors[i];
+    dot.style.boxShadow = '0 0 ' + (6 - Math.floor(i / 2)) + 'px ' + colors[i];
+    document.body.appendChild(dot);
+    trail.push({ el: dot, x: 0, y: 0 });
+  }
+
+  var mouseX = 0, mouseY = 0;
+  var isMoving = false;
+  var hideTimer = null;
+
+  document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    isMoving = true;
+    for (var i = 0; i < trailLength; i++) {
+      trail[i].el.style.opacity = '1';
+    }
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function() {
+      isMoving = false;
+      for (var i = 0; i < trailLength; i++) {
+        trail[i].el.style.opacity = '0';
+      }
+    }, 300);
+  });
+
+  function animate() {
+    trail[0].x = mouseX;
+    trail[0].y = mouseY;
+    for (var i = 1; i < trailLength; i++) {
+      trail[i].x += (trail[i - 1].x - trail[i].x) * 0.35;
+      trail[i].y += (trail[i - 1].y - trail[i].y) * 0.35;
+    }
+    for (var i = 0; i < trailLength; i++) {
+      var size = 12 - i;
+      trail[i].el.style.left = (trail[i].x - size / 2) + 'px';
+      trail[i].el.style.top = (trail[i].y - size / 2) + 'px';
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
