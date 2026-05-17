@@ -157,7 +157,7 @@ bangumi:
   enable: true
   source: bili
   bgmInfoSource: 'bgmv0'
-  path:
+  path: bangumi/index.html
   vmid: 448172181
   title: '追番列表'
   quote: '生命不息，追番不止！'
