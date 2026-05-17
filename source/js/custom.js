@@ -36,6 +36,20 @@ console.log('%c Rhine\'s Blog %c https://ban-code-art.github.io',
   });
 })();
 
+// Pjax compatibility: re-execute bangumi scripts after page switch
+document.addEventListener('pjax:complete', function() {
+  var scripts = document.querySelectorAll('#article-container script');
+  scripts.forEach(function(script) {
+    var newScript = document.createElement('script');
+    if (script.src) {
+      newScript.src = script.src;
+    } else {
+      newScript.textContent = script.textContent;
+    }
+    script.parentNode.replaceChild(newScript, script);
+  });
+});
+
 // Mouse trail shadow effect
 (function() {
   var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
