@@ -151,3 +151,26 @@ tag_plugins:
   enable: true
   CDN:
     anima_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/anima.js
+
+# Bilibili 追番
+bangumi:
+  enable: true
+  source: bili
+  bgmInfoSource: 'bgmv0'
+  path:
+  vmid:
+  title: '追番列表'
+  quote: '生命不息，追番不止！'
+  show: 1
+  lazyload: true
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+
+# Butterfly Charts 数据统计图表
+butterfly_charts:
+  enable: true
+  bindTo: '#bindTo'
+  bindType: 'bindTo'
