@@ -1,13 +1,14 @@
 ---
-title: "从零搭建个人博客：技术框架与落地实践"
-date: 2026-05-16 14:00:00 +0800
+title: 从零搭建个人博客：技术框架与落地实践
+date: '2026-05-16 14:00:00 +0800'
 tags:
   - Hexo
   - 博客搭建
   - GitHub Pages
   - Butterfly
 categories: 技术
-cover: https://img.001315.xyz/file/tg/1778931718760.webp
+cover: 'https://img.001315.xyz/file/tg/1778931718760.webp'
+abbrlink: 7b1e2ad1
 ---
 
 ## 前言

@@ -114,6 +114,9 @@ sitemap:
 
 # All Minifier - 压缩优化
 all_minifier: true
+html_minifier:
+  enable: false
+  exclude:
 
 # Blog Encrypt - 文章加密（在需要加密的文章 front-matter 中添加 password 字段即可）
 # 示例：
@@ -144,7 +147,7 @@ swiper:
   default_cover: https://img.001315.xyz/file/tg/1778924977571.webp
   swiper_css: https://unpkg.com/swiper/swiper-bundle.min.css
   swiper_js: https://unpkg.com/swiper/swiper-bundle.min.js
-  custom_css: /css/custom.css
+  custom_css: /css/custom.css?v=20260517
 
 # Tag Plugins Plus 增强标签
 tag_plugins:

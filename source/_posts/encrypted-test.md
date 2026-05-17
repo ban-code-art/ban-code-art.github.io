@@ -1,6 +1,6 @@
 ---
-title: "私密笔记：学习计划与思考"
-date: 2026-05-17 10:00:00 +0800
+title: 私密笔记：学习计划与思考
+date: '2026-05-17 10:00:00 +0800'
 tags:
   - 随笔
   - 私密
@@ -8,7 +8,8 @@ categories: 随笔
 password: rhine2026
 abstract: 这是一篇加密文章，请输入密码查看内容。
 message: 请输入密码以阅读全文
-cover: https://img.001315.xyz/file/tg/1778924977571.webp
+cover: 'https://img.001315.xyz/file/tg/1778924977571.webp'
+abbrlink: '92931669'
 ---
 
 ## 近期学习计划

@@ -228,7 +228,7 @@ pjax:
 # Inject custom head/bottom
 inject:
   head:
-    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/custom.css?v=20260517">
     - <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
     - <link rel="shortcut icon" type="image/svg+xml" href="/img/favicon.svg">
   bottom:

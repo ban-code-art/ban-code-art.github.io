@@ -36,6 +36,32 @@ console.log('%c Rhine\'s Blog %c https://ban-code-art.github.io',
   });
 })();
 
+// Scroll-triggered entrance animation
+(function() {
+  function initScrollReveal() {
+    var items = document.querySelectorAll('.recent-post-item, #aside-content .card-widget');
+    if (!items.length) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, index) {
+        if (entry.isIntersecting) {
+          setTimeout(function() {
+            entry.target.classList.add('scroll-visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    items.forEach(function(item) {
+      observer.observe(item);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initScrollReveal);
+  document.addEventListener('pjax:complete', initScrollReveal);
+})();
+
 // Pjax compatibility: re-execute bangumi scripts after page switch
 document.addEventListener('pjax:complete', function() {
   var scripts = document.querySelectorAll('#article-container script');
