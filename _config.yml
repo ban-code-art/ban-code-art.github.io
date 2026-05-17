@@ -131,3 +131,23 @@ encrypt:
 aplayer:
   meting: true
   asset_inject: false
+
+# Swiper 首页轮播
+swiper:
+  enable: true
+  priority: 5
+  enable_page: all
+  layout:
+    type: id
+    name: home_top
+    index: 1
+  default_cover: https://img.001315.xyz/file/tg/1778924977571.webp
+  swiper_css: https://unpkg.com/swiper/swiper-bundle.min.css
+  swiper_js: https://unpkg.com/swiper/swiper-bundle.min.js
+  custom_css: /css/custom.css
+
+# Tag Plugins Plus 增强标签
+tag_plugins:
+  enable: true
+  CDN:
+    anima_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/anima.js
