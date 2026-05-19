@@ -54,14 +54,30 @@
 #body-wrap #content-inner #recent-posts > .recent-post-item,
 #body-wrap #content-inner .aside-content .card-widget,
 #body-wrap #content-inner #aside-content .card-widget,
-#body-wrap #content-inner #post,
 #recent-posts > .recent-post-item,
 .aside-content .card-widget,
-#aside-content .card-widget,
-#post {
+#aside-content .card-widget {
   background: rgba(255, 255, 255, 0.5) !important;
   backdrop-filter: saturate(140%) blur(16px);
   -webkit-backdrop-filter: saturate(140%) blur(16px);
+  border-radius: 28px !important;
+  border: 2.5px solid rgba(255, 255, 255, 0.92) !important;
+  box-shadow:
+    0 0 0 1.5px rgba(0, 0, 40, 0.35),
+    0 4px 16px rgba(0, 0, 30, 0.15),
+    0 8px 32px rgba(15, 23, 42, 0.10),
+    0 1px 0 rgba(255, 255, 255, 0.7) inset !important;
+  transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Post page: translucent, NO blur */
+#body-wrap #content-inner #post,
+#post {
+  background: rgba(255, 255, 255, 0.18) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-radius: 28px !important;
   border: 2.5px solid rgba(255, 255, 255, 0.92) !important;
   box-shadow:
@@ -84,13 +100,7 @@
   -webkit-backdrop-filter: saturate(140%);
 }
 
-/* Post reading page: translucent, no blur */
-#post,
-#body-wrap #content-inner #post {
-  background: rgba(255, 255, 255, 0.18) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
+/* Post reading page: handled above (no blur) */
 
 /* Glass top refraction highlight */
 #recent-posts > .recent-post-item::before,
