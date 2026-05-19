@@ -5,7 +5,7 @@ tags:
   - 计算机网络
   - 投稿
 categories: 投稿
-cover: ''
+cover: 'https://img.001315.xyz/file/tg/1779179700934.webp'
 abbrlink: e0b19fe0
 ---
 
