@@ -6,7 +6,7 @@ tags:
   - 测试
 categories: 分类名
 abbrlink: 3bf4b27
-cover:'https://img.001315.xyz/file/tg/1779181020871.webp'
+cover: 'https://img.001315.xyz/file/tg/1779181020871.webp'
 ---
 
 
