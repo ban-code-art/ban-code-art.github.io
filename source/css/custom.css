@@ -84,11 +84,12 @@
   -webkit-backdrop-filter: saturate(140%);
 }
 
-/* Post reading page: no blur */
+/* Post reading page: translucent glass, not opaque white */
 #post,
 #body-wrap #content-inner #post {
-  backdrop-filter: saturate(140%) !important;
-  -webkit-backdrop-filter: saturate(140%) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  backdrop-filter: saturate(140%) blur(12px) !important;
+  -webkit-backdrop-filter: saturate(140%) blur(12px) !important;
 }
 
 /* Glass top refraction highlight */
