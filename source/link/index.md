@@ -13,6 +13,6 @@ type: "link"
   "title": "Rhine",
   "link": "https://rhine.bbroot.com/",
   "logo": "https://img.001315.xyz/file/tg/1778406722917.webp",
-  "desc": "Rhine's Blog"
+  "desc": "保持热爱，奔赴山海"
 }
 ```
